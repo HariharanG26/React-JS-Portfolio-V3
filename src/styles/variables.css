@@ -1,0 +1,98 @@
+:root {
+    /* Colors */
+    --primary-color: #3498db;
+    --primary-light: #5dade2;
+    --primary-dark: #2980b9;
+    
+    --secondary-color: #2ecc71;
+    --secondary-light: #58d68d;
+    --secondary-dark: #27ae60;
+    
+    --accent-color: #e74c3c;
+    --accent-light: #ec7063;
+    --accent-dark: #c0392b;
+    
+    --text-color: #333;
+    --text-light: #777;
+    --text-lighter: #aaa;
+    
+    --bg-color: #fff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    
+    --border-color: #dee2e6;
+    --border-light: #f1f1f1;
+    --border-dark: #ced4da;
+    
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --info-color: #3498db;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xxl: 3rem;
+    
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2rem;
+    
+    --line-height-sm: 1.25;
+    --line-height-md: 1.5;
+    --line-height-lg: 1.75;
+    
+    /* Borders */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-circle: 50%;
+    
+    /* Z-index */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal-backdrop: 1040;
+    --z-index-modal: 1050;
+    --z-index-popover: 1060;
+    --z-index-tooltip: 1070;
+  }
+  
+  [data-theme="dark"] {
+    --text-color: #f8f9fa;
+    --text-light: #adb5bd;
+    --text-lighter: #6c757d;
+    
+    --bg-color: #212529;
+    --bg-secondary: #343a40;
+    --bg-tertiary: #495057;
+    
+    --border-color: #495057;
+    --border-light: #6c757d;
+    --border-dark: #343a40;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }

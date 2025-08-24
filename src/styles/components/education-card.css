@@ -1,0 +1,79 @@
+.education-card {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+  }
+  
+  .education-card:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-5px);
+  }
+  
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .education-header h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+  }
+  
+  .education-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 50px;
+  }
+  
+  .education-institution {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .institution-name {
+    font-weight: 500;
+  }
+  
+  .institution-location {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  
+  .education-description {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .education-gpa {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .education-courses {
+    margin-top: 1rem;
+  }
+  
+  .education-courses ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .education-courses li {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--secondary-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+  }

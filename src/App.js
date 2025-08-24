@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import RoutesConfig from './routes'; // Import RoutesConfig
+import './styles/base.css';
+import './styles/layout.css';
+import './styles/animations.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider>
+      <Router basename="/">  {/* Set basename to root path '/' */}
+        <div className="app-background"></div>
+        <div className="app-container content-overlay">
+          <Navbar />
+          {/* Wrap RoutesConfig without AnimatePresence directly here */}
+          <RoutesConfig />
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

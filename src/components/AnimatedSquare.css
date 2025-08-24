@@ -1,0 +1,99 @@
+.cube-scene {
+    perspective: 1200px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+  }
+  
+  .cube {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cube-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    backface-visibility: visible;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cube-face-1 {
+    transform: rotateY(0deg) translateZ(125px);
+  }
+  .cube-face-2 {
+    transform: rotateY(90deg) translateZ(125px);
+  }
+  .cube-face-3 {
+    transform: rotateY(180deg) translateZ(125px);
+  }
+  .cube-face-4 {
+    transform: rotateY(270deg) translateZ(125px);
+  }
+  
+  .tech-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .tech-tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  
+  @media (max-width: 768px) {
+    .cube-scene {
+      width: 200px;
+      height: 200px;
+    }
+    
+    .cube-face-1 {
+      transform: rotateY(0deg) translateZ(100px);
+    }
+    .cube-face-2 {
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .cube-face-3 {
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .cube-face-4 {
+      transform: rotateY(270deg) translateZ(100px);
+    }
+    
+    .tech-item {
+      padding: 8px;
+    }
+  }

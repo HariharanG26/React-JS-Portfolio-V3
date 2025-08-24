@@ -1,0 +1,112 @@
+.resume-page {
+    padding: 2rem 0;
+  }
+  
+  .resume-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .resume-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .resume-preview {
+    text-align: center;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .pdf-icon {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .resume-preview h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .resume-preview p {
+    color: var(--text-light);
+  }
+  
+  .download-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .download-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+  }
+  
+  .download-icon {
+    font-size: 1rem;
+  }
+  
+  .resume-skills {
+    width: 100%;
+  }
+  
+  .resume-skills h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .skills-category {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .skills-category h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .skills-category ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .skills-category li {
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .resume-preview {
+      padding: 1.5rem;
+    }
+  }

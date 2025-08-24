@@ -1,0 +1,80 @@
+.education-page {
+    padding: 2rem 0;
+  }
+  
+  .education-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .education-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .certifications-section {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+  }
+  
+  .certifications-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .certification-card {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  .certification-card:hover {
+    box-shadow: var(--shadow);
+  }
+  
+  .certification-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .certification-card p {
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+  }
+  
+  .certification-card span {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  
+  .credential-id {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    background-color: rgba(52, 152, 219, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .education-header {
+      margin-bottom: 1.5rem;
+    }
+  
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,121 @@
+.contact-page {
+    padding: 2rem 0;
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .contact-form-container {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+  }
+  
+  .contact-form-container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .contact-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .contact-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  .contact-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    min-width: 40px;
+    height: 40px;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contact-text h3 {
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+  }
+  
+  .contact-text p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .map-container {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow);
+  }
+  
+  .map-container h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .map-wrapper {
+    height: 300px;
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 992px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .map-wrapper {
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-details {
+      grid-template-columns: 1fr;
+    }
+    
+    .contact-header {
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-form-container,
+    .contact-card,
+    .map-container {
+      padding: 1rem;
+    }
+  }

@@ -1,0 +1,124 @@
+/* ========== Base styles for .home-page ========== */
+.home-page {
+  padding: 3rem 0;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+[data-theme="dark"] .home-page {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+/* ========== Responsive container ========== */
+.home-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+/* ========== Content Blocks ========== */
+.home-content,
+.home-animation {
+  flex: 1 1 45%;
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--background-secondary);
+  color: #222; /* Light mode text */
+}
+
+[data-theme="dark"] .home-content,
+[data-theme="dark"] .home-animation {
+  color: #f0f0f0; /* Dark mode text */
+}
+
+/* ========== Individual Text Styles ========== */
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.home-description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Ensure text inside these elements is also visible in dark mode */
+[data-theme="dark"] .home-title,
+[data-theme="dark"] .home-subtitle,
+[data-theme="dark"] .home-description {
+  color: #f0f0f0;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (max-width: 992px) {
+  .home-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-content,
+  .home-animation {
+    flex: 1 1 100%;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.3) 100%
+    );
+  }
+
+  [data-theme="dark"] .home-page {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .home-description {
+    font-size: 0.95rem;
+  }
+}

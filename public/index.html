@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Professional portfolio website showcasing my work and skills" />
+  <meta property="og:title" content="Hariharan G | Portfolio" />
+  <meta property="og:description" content="Showcasing my work, skills, and achievements" />
+  <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+  <meta property="og:url" content="YOUR_SITE_URL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hariharan G | Portfolio" />
+  <meta name="twitter:description" content="Showcasing my work, skills, and achievements" />
+  <meta name="twitter:image" content="URL_TO_YOUR_IMAGE" />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <title>Hariharan G | Portfolio</title>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Preconnect to improve font loading performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS (Map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/path-to-your-favicon.ico" />
+
+  <!-- PWA Metadata (optional, if you plan to make the site a PWA) -->
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Apple Touch Icons for iOS Devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <!-- Stylesheets (if you have any other global CSS) -->
+  <link rel="stylesheet" href="/styles/main.css" />
+
+  <!-- Optimize performance -->
+  <link rel="preload" href="/path-to-hero-image.jpg" as="image" type="image/jpeg" />
+
+</head>
+
+<body>
+  <!-- Notify users to enable JS if disabled -->
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <!-- Root Element for React to mount -->
+  <div id="root"></div>
+
+  <!-- Scripts (React bundle, etc.) -->
+  <script src="/path-to-your-react-bundle.js"></script>
+</body>
+
 </html>
