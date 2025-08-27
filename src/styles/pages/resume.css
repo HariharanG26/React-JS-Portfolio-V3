@@ -1,112 +1,185 @@
+/* ================================
+   Resume Page (resume.css)
+   Responsive + Modern + Mobile First
+   ================================ */
+
 .resume-page {
-    padding: 2rem 0;
-  }
-  
+  padding: 2rem 0;
+}
+
+/* ---------- Container ---------- */
+.resume-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ---------- Layout ---------- */
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---------- Resume Preview Card ---------- */
+.resume-preview {
+  text-align: center;
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 500px;
+  transition: var(--transition);
+}
+
+.resume-preview:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.pdf-icon {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-preview h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.resume-preview p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+/* ---------- Download Button ---------- */
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.download-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+}
+
+.download-icon {
+  font-size: 1.1rem;
+}
+
+/* ---------- Skills Section ---------- */
+.resume-skills {
+  width: 100%;
+}
+
+.resume-skills h3 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-category {
+  background-color: var(--bg-secondary);
+  padding: 1.8rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.skills-category:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.skills-category h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.skills-category ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skills-category li {
+  color: var(--text-color);
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+/* ---------- Responsive Styles ---------- */
+@media (max-width: 992px) {
   .resume-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    max-width: 95%;
   }
-  
-  .resume-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-  
+
   .resume-preview {
-    text-align: center;
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-    width: 100%;
-    max-width: 500px;
+    max-width: 450px;
   }
-  
-  .pdf-icon {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .resume-content {
+    gap: 2rem;
   }
-  
-  .resume-preview h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .resume-preview p {
-    color: var(--text-light);
-  }
-  
-  .download-button {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.8rem 2rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    cursor: pointer;
-    font-weight: 500;
-    transition: var(--transition);
-  }
-  
-  .download-button:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
-  }
-  
-  .download-icon {
-    font-size: 1rem;
-  }
-  
-  .resume-skills {
-    width: 100%;
-  }
-  
-  .resume-skills h3 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .skills-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .skills-category {
-    background-color: var(--bg-secondary);
+
+  .resume-preview {
     padding: 1.5rem;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
   }
-  
-  .skills-category h4 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    text-align: center;
+
+  .resume-preview h3 {
+    font-size: 1.2rem;
   }
-  
-  .skills-category ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+
+  .download-button {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
   }
-  
-  .skills-category li {
-    color: var(--text-color);
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
+
+  .skills-categories {
+    grid-template-columns: 1fr; /* stack categories */
   }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .resume-preview {
-      padding: 1.5rem;
-    }
+}
+
+@media (max-width: 480px) {
+  .pdf-icon {
+    font-size: 2rem;
   }
+
+  .resume-preview h3 {
+    font-size: 1.1rem;
+  }
+
+  .resume-skills h3 {
+    font-size: 1.3rem;
+  }
+}

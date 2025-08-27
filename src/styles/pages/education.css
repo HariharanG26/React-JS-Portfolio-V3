@@ -1,80 +1,261 @@
+/* ==========================================================
+   📘 Education & Certifications Page — Production Ready
+   - Light & Dark Mode Support
+   - Better visibility in dark theme
+   - Improved typography and responsiveness
+   ========================================================== */
+
+/* =============================
+   🎓 Education Section Wrapper
+   ============================= */
 .education-page {
-    padding: 2rem 0;
-  }
-  
+  padding: 2rem 0;
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition);
+}
+
+.education-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+}
+
+.education-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================
+   🎓 Education Cards
+   ============================= */
+.education-list .education-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem 1.8rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.education-list .education-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+/* Degree Title */
+.education-list .education-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* College Name */
+.education-list .education-card .college {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-color);
+  letter-spacing: 0.4px;
+  display: inline-block;
+  line-height: 1.5;
+  transition: color var(--transition);
+}
+
+/* Location */
+.education-list .education-card .location {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  margin-left: 0.3rem;
+  font-style: italic;
+}
+
+/* Description / Specialization */
+.education-list .education-card p {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Year Tag */
+.education-list .education-card .year {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  background: rgba(0, 0, 0, 0.08);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =============================
+   📜 Certifications Section
+   ============================= */
+.certifications-section {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+.certifications-section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-card {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.certification-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-3px);
+}
+
+.certification-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.certification-card p {
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.certification-card span {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* Credential ID */
+.credential-id {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =============================
+   🌙 Dark Theme Fixes
+   ============================= */
+body.dark .education-list .education-card {
+  background-color: #1e1e2f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .education-list .education-card h3 {
+  color: #4da6ff; /* brighter degree title */
+}
+
+/* Force college names visible (supports both .college class and first paragraph) */
+body.dark .education-list .education-card .college,
+body.dark .education-list .education-card p:first-of-type {
+  color: #ffd700; /* ✨ Gold accent */
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+}
+
+body.dark .education-list .education-card .location {
+  color: #c0c0c0;
+}
+
+body.dark .education-list .education-card p {
+  color: #e0e0e0;
+}
+
+body.dark .education-list .education-card .year {
+  color: #d1ecff;
+  background: rgba(77, 166, 255, 0.18);
+  font-weight: 600;
+}
+
+body.dark .certification-card {
+  background-color: #1e1e2f;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .certification-card h3 {
+  color: #4da6ff;
+}
+
+body.dark .certification-card p {
+  color: #e0e0e0;
+}
+
+body.dark .certification-card span {
+  color: #b0b0b0;
+}
+
+body.dark .credential-id {
+  color: #d1ecff;
+  background-color: rgba(77, 166, 255, 0.18);
+}
+
+/* =============================
+   📱 Responsive Adjustments
+   ============================= */
+@media (max-width: 768px) {
   .education-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
   }
-  
-  .education-list {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
+
+  .education-list .education-card {
+    padding: 1.2rem 1.3rem;
   }
-  
-  .certifications-section {
-    max-width: 1200px;
-    margin: 3rem auto 0;
-    padding: 0 1rem;
-  }
-  
-  .certifications-section h2 {
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
+
   .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
-  
-  .certification-card {
-    background-color: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
-  }
-  
-  .certification-card:hover {
-    box-shadow: var(--shadow);
-  }
-  
-  .certification-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .certification-card p {
-    color: var(--text-color);
-    margin-bottom: 0.3rem;
-  }
-  
-  .certification-card span {
-    color: var(--text-light);
-    font-size: 0.9rem;
-  }
-  
-  .credential-id {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--text-light);
-    background-color: rgba(52, 152, 219, 0.1);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
+
+  .education-list .education-card .year {
+    position: static;
+    float: right;
+    margin-top: 0.8rem;
     display: inline-block;
   }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .education-header {
-      margin-bottom: 1.5rem;
-    }
-  
-    .certifications-grid {
-      grid-template-columns: 1fr;
-    }
+}
+
+@media (max-width: 480px) {
+  .education-header {
+    font-size: 1.3rem;
   }
+
+  .education-list .education-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .certifications-section h2 {
+    font-size: 1.4rem;
+  }
+}

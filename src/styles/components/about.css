@@ -1,74 +1,103 @@
 .about-page {
-    padding: 2rem 0;
-  }
-  
-  .about-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
+  padding: 2rem 0;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-text h2 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.about-text p {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.skills-section {
+  background-color: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.skills-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.skills-grid div,
+.skills-grid span,
+.skills-grid li,
+.skills-grid p {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* =============================
+   🌙 Dark Theme Fixes
+   Ensures readability in dark mode
+   ============================= */
+body.dark .skills-section {
+  background-color: #1e1e2f; /* darker neutral bg for contrast */
+}
+
+body.dark .skills-section h2 {
+  color: #4da6ff; /* brighter accent for headers */
+}
+
+body.dark .skills-grid div,
+body.dark .skills-grid span,
+body.dark .skills-grid li,
+body.dark .skills-grid p {
+  color: #e0e0e0; /* lighter text for readability */
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
   .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    grid-template-columns: 1fr;
   }
-  
-  .about-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .about-text h2 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-  }
-  
-  .about-text p {
-    color: var(--text-color);
-    line-height: 1.7;
-  }
-  
-  .skills-section {
-    background-color: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-  }
-  
-  .skills-section h2 {
-    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .about-header {
     margin-bottom: 1.5rem;
-    text-align: center;
   }
-  
+
+  .about-content {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-  
-  /* Responsive styles */
-  @media (max-width: 992px) {
-    .about-content {
-      grid-template-columns: 1fr;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .about-header {
-      margin-bottom: 1.5rem;
-    }
-  
-    .about-content {
-      padding: 0 1rem;
-      gap: 2rem;
-    }
-  
-    .skills-grid {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    }
-  }
+}

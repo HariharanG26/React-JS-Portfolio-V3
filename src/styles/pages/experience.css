@@ -1,55 +1,94 @@
 .experience-page {
-    padding: 2rem 0;
-  }
-  
+  padding: 2rem 0;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.achievements-section {
+  max-width: 800px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+.achievements-section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.achievements-list {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.achievements-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.achievements-list li::before {
+  /* content: "•"; */
+  color: var(--primary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* =============================
+   🌙 Dark Theme Fixes
+   Ensures readability in dark mode
+   ============================= */
+body.dark .achievements-list {
+  background-color: #1e1e2f; /* darker neutral bg for visibility */
+}
+
+body.dark .achievements-list li {
+  color: #e0e0e0; /* light text for good contrast */
+}
+
+body.dark .achievements-section h2 {
+  color: #4da6ff; /* brighter heading accent */
+}
+
+/* Company name + location visibility */
+.company-name {
+  font-weight: 600;
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.company-location {
+  font-style: italic;
+  color: var(--text-muted, #666);
+  transition: color 0.3s;
+}
+
+body.dark .company-name {
+  color: #ffffff; /* bright white for contrast */
+}
+
+body.dark .company-location {
+  color: #b0b0b0; /* softer gray for subtle visibility */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .experience-header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .experience-list {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  .achievements-section {
-    max-width: 800px;
-    margin: 3rem auto 0;
-    padding: 0 1rem;
-  }
-  
-  .achievements-section h2 {
-    color: var(--primary-color);
-    text-align: center;
     margin-bottom: 1.5rem;
   }
-  
-  .achievements-list {
-    background-color: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-sm);
-  }
-  
-  .achievements-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-color);
-  }
-  
-  .achievements-list li::before {
-    /* content: "•"; */
-    color: var(--primary-color);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-  
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .experience-header {
-      margin-bottom: 1.5rem;
-    }
-  }
+}
