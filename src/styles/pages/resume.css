@@ -1,10 +1,10 @@
 /* ================================
    Resume Page (resume.css)
-   Responsive + Modern + Mobile First
+   Compact, Minimalist + Mobile First
    ================================ */
 
 .resume-page {
-  padding: 2rem 0;
+  padding: 1.5rem 0; /* Reduced top/bottom padding */
 }
 
 /* ---------- Container ---------- */
@@ -18,73 +18,86 @@
 .resume-content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem; /* Reduced gap */
   align-items: center;
   width: 100%;
 }
 
-/* ---------- Resume Preview Card ---------- */
+/* ---------- Resume Preview Card (Compact) ---------- */
 .resume-preview {
   text-align: center;
   background-color: var(--bg-secondary);
-  padding: 2rem;
+  padding: 1.6rem 1.2rem; /* Reduced padding */
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
   width: 100%;
-  max-width: 500px;
+  max-width: 380px; /* 👈 Significantly smaller */
   transition: var(--transition);
+  position: relative;
 }
 
 .resume-preview:hover {
   box-shadow: var(--shadow);
-  transform: translateY(-3px);
+  transform: translateY(-2px); /* Subtler lift */
 }
 
 .pdf-icon {
   color: var(--primary-color);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: 2rem; /* Slightly smaller */
+  margin-bottom: 0.8rem;
 }
 
 .resume-preview h3 {
   color: var(--primary-color);
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  font-size: 1.25rem; /* Smaller heading */
+  font-weight: 600;
 }
 
 .resume-preview p {
   color: var(--text-light);
-  font-size: 0.95rem;
+  font-size: 0.875rem; /* Smaller description */
+  line-height: 1.5;
 }
 
-/* ---------- Download Button ---------- */
+/* ---------- Download Button (Compact & Centered) ---------- */
+.download-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 380px; /* Matches preview card */
+}
+
 .download-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  padding: 0.9rem 2.2rem;
+  gap: 0.5rem;
+  padding: 0.75rem 1.8rem; /* Tighter padding */
   background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: var(--border-radius-sm);
   cursor: pointer;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: var(--transition);
+  min-width: 160px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.2);
 }
 
 .download-button:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
 }
 
 .download-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
-/* ---------- Skills Section ---------- */
+/* ---------- Skills Section (Optional: Keep or hide on small screens) ---------- */
 .resume-skills {
   width: 100%;
 }
@@ -92,94 +105,115 @@
 .resume-skills h3 {
   color: var(--primary-color);
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .skills-categories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
 }
 
 .skills-category {
   background-color: var(--bg-secondary);
-  padding: 1.8rem;
+  padding: 1.4rem;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
 }
 
 .skills-category:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
   box-shadow: var(--shadow);
 }
 
 .skills-category h4 {
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .skills-category ul {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .skills-category li {
   color: var(--text-color);
-  padding: 0.5rem;
+  padding: 0.4rem 0;
   border-bottom: 1px solid var(--border-color);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  text-align: center;
 }
 
-/* ---------- Responsive Styles ---------- */
+/* ---------- Responsive Styles (Even tighter on small screens) ---------- */
+
 @media (max-width: 992px) {
   .resume-container {
     max-width: 95%;
   }
 
-  .resume-preview {
-    max-width: 450px;
+  .resume-preview,
+  .download-button-wrapper {
+    max-width: 360px;
   }
 }
 
 @media (max-width: 768px) {
   .resume-content {
-    gap: 2rem;
+    gap: 1.6rem;
   }
 
   .resume-preview {
-    padding: 1.5rem;
+    padding: 1.4rem 1rem;
   }
 
   .resume-preview h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+  }
+
+  .resume-preview p {
+    font-size: 0.85rem;
   }
 
   .download-button {
     width: 100%;
-    font-size: 0.95rem;
-    padding: 0.8rem 1.5rem;
+    max-width: 280px;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.85rem;
   }
 
   .skills-categories {
-    grid-template-columns: 1fr; /* stack categories */
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
   .pdf-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .resume-preview h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .resume-skills h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .download-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    min-width: 140px;
+  }
+
+  .resume-content {
+    gap: 1.4rem;
   }
 }

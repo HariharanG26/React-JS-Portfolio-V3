@@ -6,20 +6,22 @@
   align-items: center;
   justify-content: center;
   position: relative;
+
+  /* Soft SaaS gradient */
   background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0.2) 100%
+    180deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.25) 100%
   );
 }
 
 [data-theme="dark"] .home-page {
   background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.2) 100%
+    180deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0.25) 100%
   );
 }
 
@@ -27,7 +29,7 @@
 .home-container {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
   width: 100%;
   max-width: 1100px;
@@ -36,41 +38,144 @@
   flex-wrap: wrap;
 }
 
-/* ========== Content Blocks ========== */
+/* ========== Cubic Card Blocks ========== */
 .home-content,
 .home-animation {
   flex: 1 1 45%;
-  padding: 2rem;
+  padding: 2.2rem;
   border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-sm);
   background-color: var(--background-secondary);
-  color: #222; /* Light mode text */
+  position: relative;
+
+  /* Cubic depth */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Subtle lift on hover (does NOT affect Framer Motion) */
+.home-content:hover,
+.home-animation:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 [data-theme="dark"] .home-content,
 [data-theme="dark"] .home-animation {
-  color: #f0f0f0; /* Dark mode text */
+  color: #f0f0f0;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* ========== Individual Text Styles ========== */
+/* ========== Typography Hierarchy ========== */
 .home-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
 }
 
 .home-subtitle {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
 }
 
 .home-description {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
-/* Ensure text inside these elements is also visible in dark mode */
+/* ========== Services List (Freelance feel) ========== */
+.home-services ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.home-services li {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+[data-theme="dark"] .home-services li {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+/* ========== CTA Buttons ========== */
+.home-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.45);
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  color: inherit;
+}
+
+[data-theme="dark"] .secondary-btn {
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ========== Experience Card (Bottom Section) ========== */
+.home-experience {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+[data-theme="dark"] .home-experience {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.home-experience h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* ========== Dark Mode Safety ========== */
 [data-theme="dark"] .home-title,
 [data-theme="dark"] .home-subtitle,
 [data-theme="dark"] .home-description {
@@ -87,26 +192,26 @@
   .home-content,
   .home-animation {
     flex: 1 1 100%;
-    padding: 1.5rem;
+    padding: 1.6rem;
   }
 }
 
 @media (max-width: 768px) {
   .home-page {
     background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.3) 0%,
-      rgba(255, 255, 255, 0.6) 50%,
-      rgba(255, 255, 255, 0.3) 100%
+      180deg,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0.65) 50%,
+      rgba(255, 255, 255, 0.35) 100%
     );
   }
 
   [data-theme="dark"] .home-page {
     background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0.6) 50%,
-      rgba(0, 0, 0, 0.3) 100%
+      180deg,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.7) 50%,
+      rgba(0, 0, 0, 0.35) 100%
     );
   }
 

@@ -1,3 +1,8 @@
+/* ================================
+   Experience Page (experience.css)
+   Optimized + Animated + Mobile First
+   ================================ */
+
 .experience-page {
   padding: 2rem 0;
 }
@@ -5,24 +10,37 @@
 .experience-header {
   text-align: center;
   margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.1s;
 }
 
+/* Main experience list container */
 .experience-list {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
+/* Achievements Section */
 .achievements-section {
   max-width: 800px;
   margin: 3rem auto 0;
   padding: 0 1rem;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.2s;
 }
 
 .achievements-section h2 {
   color: var(--primary-color);
   text-align: center;
   margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .achievements-list {
@@ -30,7 +48,22 @@
   padding: 1.5rem;
   border-radius: var(--border-radius-md);
   box-shadow: var(--shadow-sm);
-  transition: background-color 0.3s, color 0.3s;
+  transition: 
+    background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  will-change: transform, box-shadow;
+
+  /* 🔒 Critical: Remove default list styles */
+  list-style: none;
+  margin: 0;
+  padding-left: 0; /* override inherited padding */
+}
+
+/* Subtle hover lift on achievements card */
+.achievements-list:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
 
 .achievements-list li {
@@ -38,57 +71,131 @@
   padding-left: 1.5rem;
   position: relative;
   color: var(--text-color);
-  transition: color 0.3s;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: slideInRight 0.5s ease-out forwards;
+  animation-delay: calc(0.1s * var(--i, 1));
+
+  /* 🔒 Prevent text truncation (no "..." ellipsis) */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
 
+/* Ensure no browser default bullets */
+.achievements-list li::marker {
+  content: "" !important;
+}
+
+/* Single decorative dot */
 .achievements-list li::before {
-  /* content: "•"; */
-  color: var(--primary-color);
-  font-weight: bold;
+  content: "";
   position: absolute;
   left: 0;
+  top: 0.6em; /* vertically align with first line of text */
+  width: 0.45em;
+  height: 0.45em;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* =============================
-   🌙 Dark Theme Fixes
-   Ensures readability in dark mode
-   ============================= */
-body.dark .achievements-list {
-  background-color: #1e1e2f; /* darker neutral bg for visibility */
+.achievements-list li:hover::before {
+  transform: scale(1.2);
 }
 
-body.dark .achievements-list li {
-  color: #e0e0e0; /* light text for good contrast */
-}
-
-body.dark .achievements-section h2 {
-  color: #4da6ff; /* brighter heading accent */
-}
-
-/* Company name + location visibility */
+/* Company name & location */
 .company-name {
   font-weight: 600;
   color: var(--text-color);
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+  display: inline-block;
 }
 
 .company-location {
   font-style: italic;
   color: var(--text-muted, #666);
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* 🌙 Dark Theme Enhancements */
+body.dark .achievements-list {
+  background-color: #1e1e2f;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark .achievements-list li {
+  color: #e0e0e0;
+}
+
+body.dark .achievements-section h2 {
+  color: #4da6ff;
 }
 
 body.dark .company-name {
-  color: #ffffff; /* bright white for contrast */
+  color: #ffffff;
 }
 
 body.dark .company-location {
-  color: #b0b0b0; /* softer gray for subtle visibility */
+  color: #b0b0b0;
 }
 
-/* Responsive styles */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .experience-header {
     margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .achievements-section {
+    margin-top: 2rem;
+  }
+
+  .achievements-section h2 {
+    font-size: 1.3rem;
+    left: 0;
+    transform: none;
+    display: block;
+    text-align: center;
+  }
+
+  .achievements-list {
+    padding: 1.2rem;
+  }
+
+  .achievements-list li {
+    font-size: 0.95rem;
+    padding-left: 1.3rem;
+  }
+
+  .achievements-list li::before {
+    width: 0.4em;
+    height: 0.4em;
+  }
+}
+
+/* ====== ANIMATIONS ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

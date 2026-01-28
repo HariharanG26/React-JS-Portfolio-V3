@@ -21,11 +21,11 @@ const Resume = () => {
     },
     {
       title: 'Backend',
-      skills: ['Python', 'MongoDB', 'PHP & MySQL', 'REST APIs',]
+      skills: ['Python', 'MongoDB', 'PHP & MySQL', 'REST APIs', 'Firebase']
     },
     {
       title: 'Tools',
-      skills: ['Git', 'Gitlab', 'Zoho catalyst', 'CI/CD', 'EmailJS', 'Telegram BOT API']
+      skills: ['Git', 'Gitlab', 'Zoho catalyst', 'CI/CD', 'EmailJS', 'Telegram BOT API', 'Vercel']
     }
   ];
 
