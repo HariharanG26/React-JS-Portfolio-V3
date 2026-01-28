@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react'; // 👈 Added useMemo
 import { motion } from 'framer-motion';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
@@ -17,7 +17,9 @@ L.Icon.Default.mergeOptions({
 
 const Contact = () => {
   const mapRef = useRef(null);
-  const position = [12.958567, 80.193120]; // Replace with your coordinates
+
+  // ✅ Memoize position to ensure stable reference
+  const position = useMemo(() => [12.958567, 80.193120], []);
 
   // Animation variants
   const containerVariants = {
@@ -26,9 +28,9 @@ const Contact = () => {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-        when: "beforeChildren"
-      }
-    }
+        when: 'beforeChildren',
+      },
+    },
   };
 
   const itemVariants = {
@@ -37,16 +39,16 @@ const Contact = () => {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   useEffect(() => {
     if (mapRef.current) {
       mapRef.current.setView(position, 13);
     }
-  }, [position]);
+  }, [position]); // ✅ Now safe — position won't change between renders
 
   return (
     <motion.div
@@ -61,49 +63,34 @@ const Contact = () => {
       </motion.div>
 
       <div className="contact-content">
-        <motion.div 
-          variants={itemVariants}
-          className="contact-form-container"
-        >
+        <motion.div variants={itemVariants} className="contact-form-container">
           <h2>Send Me a Message</h2>
           <ContactForm />
         </motion.div>
 
-        <motion.div 
-          variants={itemVariants}
-          className="contact-info-container"
-        >
+        <motion.div variants={itemVariants} className="contact-info-container">
           <div className="contact-details">
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              className="contact-card"
-            >
+            <motion.div whileHover={{ scale: 1.03 }} className="contact-card">
               <div className="contact-icon">
                 <FaMapMarkerAlt />
               </div>
               <div className="contact-text">
                 <h3>Location</h3>
-                <p>Dr.Ramamuthy Nagar , gandhi st , Keelkattalai , Chennai 117</p>
+                <p>Dr. Ramamurthy Nagar, Gandhi St, Keelkattalai, Chennai 117</p>
               </div>
             </motion.div>
 
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              className="contact-card"
-            >
+            <motion.div whileHover={{ scale: 1.03 }} className="contact-card">
               <div className="contact-icon">
                 <FaPhone />
               </div>
               <div className="contact-text">
                 <h3>Phone</h3>
-                <p>+917824031201</p>
+                <p>+91 78240 31201</p>
               </div>
             </motion.div>
 
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              className="contact-card"
-            >
+            <motion.div whileHover={{ scale: 1.03 }} className="contact-card">
               <div className="contact-icon">
                 <FaEnvelope />
               </div>
@@ -113,22 +100,19 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.div 
-              whileHover={{ scale: 1.03 }}
-              className="contact-card"
-            >
+            <motion.div whileHover={{ scale: 1.03 }} className="contact-card">
               <div className="contact-icon">
                 <FaClock />
               </div>
               <div className="contact-text">
                 <h3>Working Hours</h3>
-                <p>Mon-Fri: 9.30am - 6.30pm</p>
+                <p>Mon-Fri: 9:30 AM – 6:30 PM</p>
                 <p>Weekends: Closed</p>
               </div>
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}

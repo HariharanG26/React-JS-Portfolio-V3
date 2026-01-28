@@ -1,6 +1,5 @@
-import { FaReact, FaNodeJs, FaJs, FaGithub, FaGitlab } from 'react-icons/fa';
-import { SiTypescript, SiRedux, SiMicrosoftoffice } from 'react-icons/si';
-
+import { FaReact, FaJs, FaGithub, FaGitlab } from 'react-icons/fa';
+import { SiTypescript, SiRedux } from 'react-icons/si';
 
 const skills = [
   { name: 'React', icon: <FaReact />, level: 90 },
@@ -10,7 +9,7 @@ const skills = [
   { name: 'Redux', icon: <SiRedux />, level: 85 },
   { name: 'GitHub', icon: <FaGithub />, level: 88 },
   { name: 'GitLab', icon: <FaGitlab />, level: 80 },
-  // { name: 'Microsoft Office', icon: <FaMicrosoft />, level: 75 },
+  // { name: 'Microsoft Office', icon: <SiMicrosoftoffice />, level: 75 },
 ];
 
 export default skills;
