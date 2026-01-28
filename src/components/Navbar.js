@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
@@ -22,6 +22,15 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // ✅ Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMobileMenuOpen]);
+
   return React.createElement(
     motion.nav,
     {
@@ -41,7 +50,7 @@ const Navbar = () => {
         },
         React.createElement(NavLink, { to: '/' }, 'Hariharan G')
       ),
-      
+
       // Mobile menu button
       React.createElement(
         'button',
@@ -54,8 +63,18 @@ const Navbar = () => {
           ? React.createElement(FaTimes, { className: 'menu-icon' })
           : React.createElement(FaBars, { className: 'menu-icon' })
       ),
-      
-      // Navigation links (desktop and mobile)
+
+      // ✅ Backdrop overlay (tap to close)
+      isMobileMenuOpen &&
+        React.createElement(
+          'div',
+          {
+            className: 'mobile-menu-overlay active',
+            onClick: () => setIsMobileMenuOpen(false)
+          }
+        ),
+
+      // Navigation links
       React.createElement(
         'div',
         { 
@@ -76,22 +95,24 @@ const Navbar = () => {
               NavLink,
               {
                 to: item.path,
-                className: ({ isActive }) => isActive ? 'nav-link active' : 'nav-link',
+                className: ({ isActive }) =>
+                  isActive ? 'nav-link active' : 'nav-link',
                 onClick: () => setIsMobileMenuOpen(false)
               },
               item.name
             )
           )
         )),
-        // Theme toggle in mobile menu
+
+        // Mobile theme toggle
         React.createElement(
           'div',
           { className: 'mobile-theme-toggle' },
           React.createElement(ThemeToggle, null)
         )
       ),
-      
-      // Theme toggle (desktop)
+
+      // Desktop theme toggle
       React.createElement(
         'div',
         { className: 'nav-actions' },
