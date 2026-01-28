@@ -219,3 +219,11 @@
     width: 80%;
   }
 }
+.mobile-menu-button {
+  z-index: 2000;
+  position: relative;
+}
+
+.nav-links {
+  z-index: 1500;
+}
